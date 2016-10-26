@@ -24,7 +24,7 @@
     <div class="login-box-body">
         <p class="login-box-msg">管理人员请登录</p>
 
-        <form action="{{ url('/admin/login') }}" method="post">
+        <form action="<?php echo e(url('/admin/login')); ?>" method="post">
             <div class="form-group has-feedback">
                 <input name="name" type="text" class="form-control" placeholder="帐号...">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -36,20 +36,21 @@
             <div class="form-group has-feedback">
                 <input type="text" name="checkcode" id="">
                 <div class="">
-                    <img src="{{ captcha_src() }}" alt="">
+                    <img src="<?php echo e(captcha_src()); ?>" alt="">
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-8">
                     <div class="checkbox icheck">
                         <label>
-                            {{--<input type="checkbox"> 自动登录--}}
+                            
                         </label>
                     </div>
                 </div>
                 <!-- /.col -->
                 <div class="col-xs-4">
-                    {{ csrf_field() }}
+                    <?php echo e(csrf_field()); ?>
+
                     <button type="submit" class="btn btn-primary btn-block btn-flat">登录</button>
                 </div>
                 <!-- /.col -->

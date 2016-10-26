@@ -30,7 +30,7 @@ Route::get('/admin/login', 'Admin\LoginController@login');
 Route::get('/admin/code', 'Admin\LoginController@code');
 Route::post('/admin/login', 'Admin\LoginController@loginPost');
 Route::get('/admin/out', 'Admin\LoginController@out');
-Route::group(['prefix' => 'admin'], function() {
+Route::group(['prefix' => 'admin', 'middleware' => 'admin_check'], function() {
     Route::get('/', 'Admin\IndexController@dashboard');
     Route::get('/dashboard', 'Admin\IndexController@dashboard');
 });

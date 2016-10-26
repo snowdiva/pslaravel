@@ -35,7 +35,7 @@ class LoginController
 
     public function loginPost(Request $request)
     {
-
+        dump($request->input());die;
     }
 
     public function code()
